@@ -11,6 +11,7 @@ const NewExpense = (props) => {
       ...enteredExpenses,
       id: Math.random().toString(),
     };
+
     props.onNewExpenseData(expenseData);
     setIsVisible(false);
   };
