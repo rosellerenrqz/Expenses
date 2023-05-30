@@ -33,15 +33,15 @@ const INITIAL_EXPENSES = [
 function App() {
   const [expenses, setExpenses] = useState(INITIAL_EXPENSES);
 
-  const newExpenseDataHandler = (expense) => {
-    setExpenses([expense, ...expenses]);
+  const addNewExpenseHandler = (expense) => {
+    setExpenses([...expenses, expense]);
   };
 
   return (
     <>
       <div>Let's get started!</div>
-      <NewExpense newExpenseData={newExpenseDataHandler} />
-      <Expenses items={expenses} />
+      <NewExpense onNewExpenseData={addNewExpenseHandler} />
+      <Expenses items={INITIAL_EXPENSES} />
     </>
   );
 }
